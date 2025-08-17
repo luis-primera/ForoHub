@@ -1,8 +1,7 @@
 # 🧠 ForoHub API
 
 API RESTful desarrollada con **Spring Boot 3** para la gestión segura de tópicos de un foro técnico.  
-Incluye **autenticación JWT**, control de roles, validación de duplicados y documentación interactiva con **Swagger UI**.  
-Ideal para entornos educativos y empresariales donde la seguridad y claridad son prioridad.
+Incluye **autenticación JWT**, control de roles, validación de duplicados.
 
 ---
 
@@ -23,30 +22,7 @@ El sistema implementa un flujo completo de autenticación:
 
 ---
 
-## 📘 Documentación interactiva (Swagger UI)
-
-- Acceso: `/swagger-ui/index.html`
-- Permite login directo desde Swagger
-- Prueba endpoints protegidos usando token JWT
-- Muestra modelos de datos, parámetros y ejemplos de respuesta
-
 ---
-
-## 🧩 Endpoints disponibles
-
-| Endpoint | Método | Seguridad | Descripción |
-|----------|--------|-----------|-------------|
-| /auth/login | POST | Público | Autenticación del usuario |
-| /topicos | GET | Protegido | Listado de tópicos |
-| /topicos | POST | Protegido | Crear nuevo tópico |
-| /topicos/{id} | GET | Protegido | Obtener tópico específico |
-| /topicos | PUT | Protegido | Actualizar tópico |
-| /topicos/{id} | DELETE | Protegido | Eliminar tópico |
-| /respuestas/{id} | POST | Protegido | Responder a un tópico |
-| /cursos | GET | Protegido | Listar cursos |
-| /cursos | POST | Protegido | Crear curso |
-
-> Todos los endpoints protegidos requieren **JWT válido** y perfil autorizado.
 
 ---
 
@@ -63,12 +39,11 @@ El sistema implementa un flujo completo de autenticación:
 ## 📦 Tecnologías utilizadas
 
 - **Java 17 + Spring Boot 3**
-- **Spring Security + JWT**
+- **Spring Security**
 - **JPA + Hibernate**
 - **MySQL**
 - **Lombok**
 - **Jackson** (JSON)
-- **Swagger/OpenAPI**
 - **Maven** como gestor de dependencias
 
 ---
@@ -100,15 +75,21 @@ El sistema implementa un flujo completo de autenticación:
 
 ### 🔹 CRUD en ForoHub
 Ejemplo de las operaciones **CRUD** funcionando en Insomnia.
-![crud forohub](imagenes/crud_forohub.png)
+![Crud ForoHub](ForoHub/imagenes/CRUD_ForoHub.png)
 
 ### 🔹 Estructura del Proyecto
 Vista de la estructura en **IntelliJ IDEA**.
-![estructura forohub](imagenes/estructura_forohub.png)
+![Estructura ForoHub](ForoHub/imagenes/Estructura_ForoHub.png)
 
 ### 🔹 Aplicación corriendo
 Ejecución de la aplicación con **Spring Boot**.
-![run forohub](imagenes/run_forohub.png)
+![Run ForoHub](ForoHub/imagenes/Run_ForoHub.png)
+
+
+🎥 Videos
+
+Aplicación Funcionando: https://youtu.be/vJvTLT7byrY
+Aplicación Funcionando:https://youtu.be/dOQMBNx38Ls
 
 🎯 Conclusión
 
@@ -116,10 +97,6 @@ ForoHub es una API segura, documentada y lista para producción, que permite:
 
 Gestión completa de usuarios, cursos, tópicos y respuestas
 
-Control de acceso mediante JWT y roles
-
 Validación de duplicados y manejo de errores consistente
-
-Documentación interactiva con Swagger UI
 
 Este proyecto aplica buenas prácticas REST, diseño de backend robusto y seguridad avanzada en Spring Boot 3.
