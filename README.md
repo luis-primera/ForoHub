@@ -79,7 +79,7 @@ Ejemplo de las operaciones **CRUD** funcionando en Insomnia.
 
 ### 🔹 Estructura del Proyecto
 Vista de la estructura en **IntelliJ IDEA**.
-![Estructura ForoHub](ForoHub/imagenes/Estructura_ForoHub.png)
+![Estructura ForoHub](ForoHub/imagenes/EstructuraForoHub.png)
 
 ### 🔹 Aplicación corriendo
 Ejecución de la aplicación con **Spring Boot**.
