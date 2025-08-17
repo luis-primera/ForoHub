@@ -1,6 +1,7 @@
 package Challenge.ForoHub.infra.exceptions;
 
 import jakarta.persistence.EntityNotFoundException;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -11,13 +12,14 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 public class GestionDeErrores {
 
     @ExceptionHandler(EntityNotFoundException.class)
-    public ResponseEntity gestionarError404(){
-        return ResponseEntity.notFound().build();
+    public ResponseEntity<?> gestionarError404(EntityNotFoundException ex){
+        String body = "{ \"error\": \"" + ex.getMessage() + "\" }";
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(body);
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResponseEntity gestionarError400(MethodArgumentNotValidException exep){
-        var errores = exep.getFieldErrors();
+    public ResponseEntity gestionarError400(MethodArgumentNotValidException ex){
+        var errores = ex.getFieldErrors();
         return ResponseEntity.badRequest().body(errores.stream().map(DatosErrorValidacion::new).toList());
     }
 

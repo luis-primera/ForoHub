@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/ForoHub.iml" filepath="$PROJECT_DIR$/.idea/ForoHub.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ForoHub/ForoHub.iml" filepath="$PROJECT_DIR$/ForoHub/ForoHub.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Prueba.iml" filepath="$PROJECT_DIR$/Prueba.iml" />
     </modules>
   </component>
 </project>

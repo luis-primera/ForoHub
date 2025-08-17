@@ -12,8 +12,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 import java.util.List;
 
+@Entity
 @Table(name = "usuario")
-@Entity(name = "Usuario")
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
@@ -23,7 +23,8 @@ public class Usuario implements UserDetails {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nombre;
-    private String correo_electronico;
+    @Column(name = "correo_electronico")
+    private String login;
     private String contrasena;
 
     @Override
@@ -38,7 +39,7 @@ public class Usuario implements UserDetails {
 
     @Override
     public String getUsername() {
-        return correo_electronico;
+        return login;
     }
 
     @Override

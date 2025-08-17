@@ -1,9 +1,17 @@
 package Challenge.ForoHub.domain.curso;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
+@Table(name = "curso")
+@Entity(name = "Curso")
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode(of = "id")
 public class Curso {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
