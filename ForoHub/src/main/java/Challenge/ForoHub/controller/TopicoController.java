@@ -5,14 +5,10 @@ import Challenge.ForoHub.domain.curso.CursoRepository;
 import Challenge.ForoHub.domain.topico.*;
 import Challenge.ForoHub.domain.usuario.Usuario;
 import Challenge.ForoHub.domain.usuario.UsuarioRepository;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
@@ -56,23 +52,23 @@ public class TopicoController {
         Topico topico = new Topico(datos, autor, curso);
         repository.save(topico);
 
-        DatosListaTopicos detalle = new DatosListaTopicos(topico);
+        DatosListarTopicos detalle = new DatosListarTopicos(topico);
 
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(detalle);
     }
 
     @GetMapping
-    public List<DatosListaTopicos> listar(){
-        return repository.findAll().stream().map(DatosListaTopicos::new).toList();
+    public List<DatosListarTopicos> listar(){
+        return repository.findAll().stream().map(DatosListarTopicos::new).toList();
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<DatosListaTopicos> obtenerTopico(@PathVariable Long id) {
+    public ResponseEntity<DatosListarTopicos> obtenerTopico(@PathVariable Long id) {
         Topico topico = repository.findById(id)
                 .orElseThrow(() -> new jakarta.persistence.EntityNotFoundException("Tópico no encontrado"));
 
-        DatosListaTopicos datos = new DatosListaTopicos(topico);
+        DatosListarTopicos datos = new DatosListarTopicos(topico);
         return ResponseEntity.ok(datos);
     }
 
@@ -97,7 +93,7 @@ public class TopicoController {
         if (datos.titulo() != null) topico.setTitulo(datos.titulo());
         if (datos.mensaje() != null) topico.setMensaje(datos.mensaje());
 
-        DatosListaTopicos detalle = new DatosListaTopicos(topico);
+        DatosListarTopicos detalle = new DatosListarTopicos(topico);
 
         return ResponseEntity.ok(detalle);
     }
