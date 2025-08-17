@@ -96,38 +96,20 @@ El sistema implementa un flujo completo de autenticación:
 
 ---
 
-## 📸 Ejemplos de request/response
+## 📸 Capturas del Proyecto
 
-### Crear tópico (POST `/topicos`)
-**Request:**
-```json
-{
-  "titulo": "Error en JavaScript",
-  "mensaje": "No se ejecutan archivos .js",
-  "autor_id": 1,
-  "curso_id": 1,
-  "status": "abierto"
-}
+### 🔹 CRUD en ForoHub
+Ejemplo de las operaciones **CRUD** funcionando en Insomnia.
+![crud forohub](imagenes/crud_forohub.png)
 
-{
-  "mensaje": "Tópico creado correctamente",
-  "detalle": {
-    "id": 4,
-    "titulo": "Error en JavaScript",
-    "mensaje": "No se ejecutan archivos .js",
-    "fecha_creacion": "2025-08-16T21:10:00"
-  }
-}
+### 🔹 Estructura del Proyecto
+Vista de la estructura en **IntelliJ IDEA**.
+![estructura forohub](imagenes/estructura_forohub.png)
 
-🗂️ Estructura del Proyecto
-Carpeta / Paquete	Descripción
-controller	Controladores REST (TopicoController, AutenticacionController)
-domain	Entidades del modelo de negocio (Curso, Topico, Usuario, Respuesta)
-dto	Objetos de transferencia de datos (DatosRegistroTopico, DatosListaTopicos)
-repository	Interfaces JPA para CRUD sobre entidades
-infra	Configuración de seguridad, filtros JWT, manejo de errores, Swagger
-resources	Archivos de configuración (application.properties)
-test	Pruebas unitarias e integración
+### 🔹 Aplicación corriendo
+Ejecución de la aplicación con **Spring Boot**.
+![run forohub](imagenes/run_forohub.png)
+
 🎯 Conclusión
 
 ForoHub es una API segura, documentada y lista para producción, que permite:
