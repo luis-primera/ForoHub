@@ -75,15 +75,18 @@ El sistema implementa un flujo completo de autenticación:
 
 ### 🔹 CRUD en ForoHub
 Ejemplo de las operaciones **CRUD** funcionando en Insomnia.
-![Crud ForoHub](ForoHub/imagenes/CRUD_ForoHub.png)
+
+![Crud ForoHub](ForoHub/imagenes/CRUDForoHub.png)
 
 ### 🔹 Estructura del Proyecto
 Vista de la estructura en **IntelliJ IDEA**.
+
 ![Estructura ForoHub](ForoHub/imagenes/EstructuraForoHub.png)
 
 ### 🔹 Aplicación corriendo
 Ejecución de la aplicación con **Spring Boot**.
-![Run ForoHub](ForoHub/imagenes/Run_ForoHub.png)
+
+![Run ForoHub](ForoHub/imagenes/RunForoHub.png)
 
 
 🎥 Videos
